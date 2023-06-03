@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>悄悄话</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./animate.css">
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mask"></div>
+        <div class="light-line"></div>
+        <div class="main">
+            <canvas id="pinkboard"></canvas>
+        </div>
+        <div class="card-container">
+            <div class="card" style="transition: all 10ms ease-in;">
+                <div class="part1" data-canOpenFlag="true">
+                    <div class="cat-pic-1">
+                        <img src="./emojy/forword-cat.webp" alt="">
+                        <img src="./emojy/get-head-cat.webp" alt="">
+                    </div>
+                    <img src="./emojy/happy-cat.webp" alt="">
+                </div>
+                <div class="top-border">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <div class="part2">
+                    <div class="speak-line">
+                        <p class="line" style="font-style: italic;">亲爱的栎儿：</p>
+                        <p class="line" style="text-indent:2em;">
+                            我很开心可以做你的男朋友，这次表白虽然因为种种原因一直推迟到了现在，
+                            但是我激动的心情丝毫不减。很幸运在这个学校遇到了优秀的你，
+                            虽然我们的家庭条件、身份、能力、地位有很大差距，因此心里时常感到自卑，但是我对你的爱意丝毫不减，
+                            我觉得你是个灵魂跟我非常契合的女孩，所以我愿意主动的去爱一次。我不知道这段感情可以持续多久，
+                            但是我知道喜欢你爱你的心永远不变。我们的爱情就像一列开往远方的火车，重要的不是火车开往的目的地，而是旅途中美好的风景，最后可能并不尽人意，但是也不枉爱过、快乐过。非常期待和小傻瓜的甜蜜爱情，希望我们的爱情可以永远像这两只猫咪的爱情一样甜。
+                        </p>
+                        <p class="line" style="text-align:right;margin:40px 0;">永远爱你的男友</p>
+                    </div>
+                </div>
+                <div class="cat-pic-2">
+                    <img src="./emojy/kiss-cat.webp" alt="">
+                    <img src="./emojy/miss-you-cat.webp" alt="">
+                </div>
+            </div>
+            <!-- <div class="red-flower">
+                <img src="./红玫瑰.png" alt="">
+            </div> -->
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = () => {
+        lover();
+        doingCard();
+    }
+</script>
+
+</html>

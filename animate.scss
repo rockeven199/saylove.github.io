@@ -1,0 +1,35 @@
+@keyframes openPageStart {
+   from {
+      opacity: 0.8;
+   }
+
+   to {
+      opacity: 0;
+   }
+}
+
+@keyframes openCard {
+   0% {
+      // transform-origin: 0 0;
+      transform: rotateZ(90deg);
+      transform: rotateX(-180deg);
+   }
+
+   100% {
+      // transform-origin: 0 0;
+      transform: rotateZ(0deg);
+      transform: rotateX(0deg);
+   }
+}
+
+@keyframes closeCard {
+   0% {
+      // transform-origin: 0 0;
+      transform: rotateX(0deg);
+   }
+
+   100% {
+      // transform-origin: 0 0;
+      transform: rotateX(-179deg);
+   }
+}

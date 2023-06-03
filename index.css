@@ -1,0 +1,203 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(135deg, rgba(246, 168, 227, 0.7333333333) 10%, rgba(233, 109, 113, 0.9215686275) 100%);
+}
+
+@media screen and (min-width: 350px) and (min-height: 600px) {
+  .card {
+    width: 80% !important;
+    height: 80% !important;
+    perspective: 200px;
+  }
+  .card .part1 {
+    height: calc(20% - 5px);
+  }
+  .card .part2 {
+    height: 80%;
+  }
+  .speak-line .line {
+    font-size: 100px;
+  }
+  .light-line {
+    top: 25%;
+  }
+}
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.container .main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.container .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(70, 70, 70, 0.885);
+  animation: openPageStart 2s forwards;
+}
+.container .light-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  background-repeat: repeat;
+  background-clip: border-box;
+  background-image: url("./light_300x60.png");
+}
+
+.red-flower {
+  max-width: 300px;
+}
+.red-flower img {
+  max-width: 100%;
+}
+
+.cat-pic-1 {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 99;
+  top: -40px;
+  left: 0;
+}
+.cat-pic-1 img {
+  width: 60px;
+  height: 60px;
+  max-width: 60px;
+  max-height: 60px;
+}
+
+.cat-pic-2 {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 99;
+  bottom: -15%;
+  left: 0;
+}
+.cat-pic-2 img {
+  width: 60px;
+  height: 60px;
+  max-width: 60px;
+  max-height: 60px;
+}
+
+.card-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.card-container .card {
+  top: 25%;
+  position: absolute;
+  transform: rotateZ(180deg);
+  transform-origin: center;
+  z-index: 999;
+  width: 70%;
+  min-height: 300px;
+  max-width: 500px;
+  height: 50%;
+  transition: all 0.65s ease-in;
+  perspective: 300px;
+  transform-style: preserve-3d;
+}
+.card-container .card .part1 {
+  border-radius: 5px;
+  border-top: 5px solid rgba(5, 111, 90, 0.912);
+  border-left: 5px solid rgba(5, 111, 90, 0.912);
+  border-right: 5px solid rgba(5, 111, 90, 0.912);
+  width: 100%;
+  height: calc(55% - 5px);
+  background-color: aliceblue;
+  transform-origin: 100% 100%;
+  transform: rotateX(-179deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-container .card .part1 img {
+  width: 35%;
+}
+.card-container .card .part2 {
+  border-radius: 5px;
+  border-bottom: 5px solid rgba(5, 111, 90, 0.912);
+  border-left: 5px solid rgba(5, 111, 90, 0.912);
+  border-right: 5px solid rgba(5, 111, 90, 0.912);
+  width: calc(100% - 10px);
+  height: 45%;
+  position: relative;
+  background-color: rgb(245, 230, 200);
+  padding: 5px;
+  overflow: scroll;
+}
+.card-container .card .part2::after {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: aliceblue;
+}
+.card-container .card .part2 .speak-line {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.card-container .card .part2 .speak-line p {
+  font-size: 0.875rem;
+  -webkit-text-decoration: underline 1px solid;
+          text-decoration: underline 1px solid;
+}
+.card-container .card .top-border {
+  border-left: 5px solid rgba(203, 145, 19, 0.912);
+  border-right: 5px solid rgba(203, 145, 19, 0.912);
+  width: 100%;
+  height: 5px;
+  top: 0;
+  left: 0;
+  background-color: rgb(48, 221, 227);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-container .card .top-border .line {
+  transform: rotate(-40deg);
+  width: 5px;
+  height: 60px;
+  background-color: rgb(226, 214, 43);
+}/*# sourceMappingURL=index.css.map */

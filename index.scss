@@ -1,0 +1,229 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg, #f6a8e3bb 10%, #e96d71eb 100%);
+}
+
+
+@media screen and (min-width:350px) and (min-height:600px) {
+
+    .card {
+        width: 80% !important;
+        height: 80% !important;
+        perspective: 200px;
+
+        .part1 {
+            height: calc(20% - 5px);
+        }
+
+        .part2 {
+            height: 80%;
+        }
+    }
+
+    .speak-line {
+
+        .line {
+            font-size: 100px;
+        }
+    }
+
+    .light-line {
+        top: 25%;
+    }
+
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(70, 70, 70, 0.885);
+        animation: openPageStart 2s forwards;
+    }
+
+    .light-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 200;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        background-repeat: repeat;
+        background-clip: border-box;
+        background-image: url('./light_300x60.png');
+    }
+}
+
+.red-flower {
+    max-width: 300px;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.cat-pic-1 {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 99;
+    top: -40px;
+    left: 0;
+
+    img {
+        width: 60px;
+        height: 60px;
+        max-width: 60px;
+        max-height: 60px;
+    }
+}
+
+.cat-pic-2 {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 99;
+    bottom: -15%;
+    left: 0;
+
+    img {
+        width: 60px;
+        height: 60px;
+        max-width: 60px;
+        max-height: 60px;
+    }
+}
+
+.card-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .card {
+        top: 25%;
+        position: absolute;
+        transform: rotateZ(180deg);
+        transform-origin: center;
+        z-index: 999;
+        width: 70%;
+        min-height: 300px;
+        max-width: 500px;
+        height: 50%;
+        transition: all 0.65s ease-in;
+        perspective: 300px;
+        transform-style: preserve-3d;
+
+        .part1 {
+            border-radius: 5px;
+            border-top: 5px solid rgba(5, 111, 90, 0.912);
+            border-left: 5px solid rgba(5, 111, 90, 0.912);
+            border-right: 5px solid rgba(5, 111, 90, 0.912);
+            width: 100%;
+            height: calc(55% - 5px);
+            background-color: aliceblue;
+            transform-origin: 100% 100%;
+            transform: rotateX(-179deg);
+            // animation: openCard 2s infinite ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 35%;
+            }
+        }
+
+        .part2 {
+            border-radius: 5px;
+            border-bottom: 5px solid rgba(5, 111, 90, 0.912);
+            border-left: 5px solid rgba(5, 111, 90, 0.912);
+            border-right: 5px solid rgba(5, 111, 90, 0.912);
+            width: calc(100% - 10px);
+            height: 45%;
+            position: relative;
+            background-color: rgb(245, 230, 200);
+            padding: 5px;
+            overflow: scroll;
+
+            &::after {
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: aliceblue;
+            }
+
+            .speak-line {
+                word-wrap: break-word;
+                word-break: break-all;
+
+                p {
+                    font-size: .875rem;
+                    text-decoration: underline 1px solid;
+                }
+            }
+        }
+
+        .top-border {
+            border-left: 5px solid rgba(203, 145, 19, 0.912);
+            border-right: 5px solid rgba(203, 145, 19, 0.912);
+            width: 100%;
+            height: 5px;
+            top: 0;
+            left: 0;
+            background-color: rgb(48, 221, 227);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .line {
+                transform: rotate(-40deg);
+                width: 5px;
+                height: 60px;
+                background-color: rgb(226, 214, 43);
+            }
+        }
+    }
+}
