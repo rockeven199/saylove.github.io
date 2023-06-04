@@ -86,14 +86,18 @@ canvas {
   display: flex;
   justify-content: space-around;
   z-index: 99;
-  top: -40px;
+  top: 20px;
+  opacity: 0;
   left: 0;
+  transform-style: preserve-3d;
+  perspective: 5px;
 }
 .cat-pic-1 img {
-  width: 60px;
-  height: 60px;
-  max-width: 60px;
-  max-height: 60px;
+  width: 40px;
+  height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  transform: translateZ(5px);
 }
 
 .cat-pic-2 {
@@ -148,9 +152,12 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
+  transform-style: preserve-3d;
+  perspective: 10px;
 }
 .card-container .card .part1 img {
   width: 35%;
+  transform: translateZ(1px);
 }
 .card-container .card .part2 {
   border-radius: 5px;

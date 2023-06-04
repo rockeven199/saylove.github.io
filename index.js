@@ -265,13 +265,15 @@ function lover() {
 function doingCard() {
     const cardPart1 = document.querySelector(".part1");
     const cardContainer = document.querySelector(".card");
+    const topEmojy = document.querySelector(".cat-pic-1");
     cardPart1.addEventListener('click', (element) => {
         let flag = element.target.dataset.canopenflag;
         if (flag == "true") {
             cardContainer.removeAttribute('style')
             cardContainer.style.transform = "rotate(0deg)";
             cardContainer.style.top = "10%";
-            cardPart1.style.animation = "openCard 1s ease-in-out forwards"
+            cardPart1.style.animation = "openCard 1s ease-in-out forwards";
+            topEmojy.style.opacity = "1";
         }
     });
 }
