@@ -87,7 +87,10 @@ canvas {
 }
 
 .red-flower {
-    max-width: 300px;
+    width: 300px;
+    position: absolute;
+    top: 0;
+    transform: rotateX(90deg);
 
     img {
         max-width: 100%;
@@ -101,17 +104,17 @@ canvas {
     display: flex;
     justify-content: space-around;
     z-index: 99;
-    top: 20px;
+    top: 60%;
     opacity: 0;
     left: 0;
     transform-style: preserve-3d;
     perspective: 5px;
 
     img {
-        width: 40px;
-        height: 40px;
-        max-width: 40px;
-        max-height: 40px;
+        width: 60px;
+        height: 60px;
+        max-width: 60px;
+        max-height: 60px;
         transform: translateZ(5px);
     }
 }
@@ -172,10 +175,21 @@ canvas {
             align-items: center;
             transform-style: preserve-3d;
             perspective: 10px;
+            position: relative;
 
             img {
                 width: 35%;
                 transform: translateZ(1px);
+            }
+
+            .start {
+                z-index: -999;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: antiquewhite;
             }
         }
 
@@ -206,7 +220,8 @@ canvas {
                 word-break: break-all;
 
                 p {
-                    font-size: .875rem;
+                    font-weight: 600;
+                    font-size: 12px;
                     text-decoration: underline 1px solid;
                 }
             }
@@ -219,7 +234,7 @@ canvas {
             height: 5px;
             top: 0;
             left: 0;
-            background-color: rgb(48, 221, 227);
+            background-color: rgb(37, 183, 188);
             overflow: hidden;
             display: flex;
             align-items: center;
