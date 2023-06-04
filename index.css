@@ -13,7 +13,7 @@ body {
 canvas {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(135deg, rgba(246, 168, 227, 0.7333333333) 10%, rgba(233, 109, 113, 0.9215686275) 100%);
+  background-image: linear-gradient(135deg, rgba(246, 168, 227, 0.5) 10%, rgba(235, 64, 70, 0.5) 100%);
 }
 
 @media screen and (min-width: 350px) and (min-height: 600px) {
@@ -90,10 +90,10 @@ canvas {
   justify-content: space-around;
   z-index: 99;
   top: 60%;
-  opacity: 0;
   left: 0;
   transform-style: preserve-3d;
   perspective: 5px;
+  transform: rotateY(180deg);
 }
 .cat-pic-1 img {
   width: 60px;
@@ -109,8 +109,8 @@ canvas {
   height: 20%;
   display: flex;
   justify-content: space-around;
-  z-index: 99;
-  bottom: -15%;
+  z-index: 0;
+  bottom: -20%;
   left: 0;
 }
 .cat-pic-2 img {
@@ -139,7 +139,7 @@ canvas {
   max-width: 500px;
   height: 50%;
   transition: all 0.65s ease-in;
-  perspective: 300px;
+  perspective: 800px;
   transform-style: preserve-3d;
 }
 .card-container .card .part1 {
@@ -159,6 +159,14 @@ canvas {
   perspective: 10px;
   position: relative;
 }
+.card-container .card .part1 .package-line {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+}
+.card-container .card .part1 .package-line img {
+  width: 100%;
+}
 .card-container .card .part1 img {
   width: 35%;
   transform: translateZ(1px);
@@ -172,6 +180,19 @@ canvas {
   height: 100%;
   background-color: antiquewhite;
 }
+.card-container .card .part1 .start .open-logo-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-container .card .part1 .start .open-logo-container img {
+  width: 80px;
+  height: 80px;
+  max-width: 80px;
+  max-height: 80px;
+}
 .card-container .card .part2 {
   border-radius: 5px;
   border-bottom: 5px solid rgba(5, 111, 90, 0.912);
@@ -182,7 +203,7 @@ canvas {
   position: relative;
   background-color: rgb(245, 230, 200);
   padding: 5px;
-  overflow: scroll;
+  overflow: auto;
 }
 .card-container .card .part2::after {
   width: 100%;
@@ -196,6 +217,7 @@ canvas {
 .card-container .card .part2 .speak-line {
   word-wrap: break-word;
   word-break: break-all;
+  letter-spacing: 1px;
 }
 .card-container .card .part2 .speak-line p {
   font-weight: 600;

@@ -269,6 +269,29 @@ function doingCard() {
     const topEmojy = document.querySelector(".cat-pic-1");
     const topEmojyImg = document.querySelector(".cat-pic-1 img");
     const me = document.querySelector("#me");
+    const getPackageLine = document.querySelector(".package-line");
+
+    getPackageLine.addEventListener('click', () => {
+        let flag = cardPart1.dataset.canopenflag;
+        if (flag == "true") {
+            cardContainer.removeAttribute('style')
+            cardContainer.style.transform = "rotate(0deg)";
+            cardContainer.style.top = "10%";
+            cardPart1.style.animation = "openCard 1s ease-in-out forwards";
+            // topEmojy.style.opacity = "1";
+            setTimeout(() => {
+                start.style.zIndex = "1";
+            }, 500);
+            cardPart1.dataset.canopenflag = "false";
+        } else {
+            cardContainer.style.transform = "rotate(180deg)";
+            cardContainer.style.top = "25%";
+            start.style.zIndex = "999";
+            cardPart1.style.animation = "closeCard 1s ease-in-out forwards";
+            cardPart1.dataset.canopenflag = "true";
+        }
+    });
+
     start.addEventListener('click', () => {
         let flag = cardPart1.dataset.canopenflag;
         if (flag == "true") {
@@ -276,7 +299,7 @@ function doingCard() {
             cardContainer.style.transform = "rotate(0deg)";
             cardContainer.style.top = "10%";
             cardPart1.style.animation = "openCard 1s ease-in-out forwards";
-            topEmojy.style.opacity = "1";
+            // topEmojy.style.opacity = "1";
             setTimeout(() => {
                 start.style.zIndex = "1";
             }, 500);
@@ -297,13 +320,22 @@ function doingCard() {
             cardContainer.style.transform = "rotate(0deg)";
             cardContainer.style.top = "10%";
             cardPart1.style.animation = "openCard 1s ease-in-out forwards";
-            topEmojy.style.opacity = "1";
+            // topEmojy.style.opacity = "1";
             setTimeout(() => {
                 start.style.zIndex = "99";
+                document.querySelector(".open-logo-container").style.opacity = "0"
             }, 500);
             cardPart1.dataset.canopenflag = "false";
         }
     });
+
+    cardPart1.addEventListener('animationend', () => {
+        if (cardPart1.dataset.canopenflag == "true") {
+            document.querySelector(".speak-line").style.display = "none";
+        } else {
+            document.querySelector(".speak-line").style.display = "block";
+        }
+    })
 }
 
 window.onload = () => {
