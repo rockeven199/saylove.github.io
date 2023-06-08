@@ -12,32 +12,32 @@
     <script src="./index.js"></script>
 </head>
 
-<body>
-    <div class="container">
+<body id="container">
+    <div class="container" >
         <div class="mask"></div>
         <div class="light-line"></div>
         <div class="main">
             <canvas id="pinkboard"></canvas>
         </div>
-        <!-- <div class="red-flower">
-            <img src="./红玫瑰.png" alt="">
-        </div> -->
         <div class="card-container">
             <div class="card" style="transition: all 10ms ease-in;">
                 <div class="part1" data-canOpenFlag="true">
                     <div class="package-line">
                         <img src="./蝴蝶结.png" alt="">
                     </div>
-                    <div class="cat-pic-1">
+                    <div class="red-flower">
+                        <img src="./红玫瑰.png" alt="">
+                    </div>
+                    <!-- <div class="cat-pic-1">
                         <img src="./emojy/forword-cat.webp" alt="">
                         <img src="./emojy/get-head-cat.webp" alt="">
-                    </div>
+                    </div> -->
                     <div class="start">
                         <div class="open-logo-container">
                             <img src="/cat-foot.png" alt="">
                         </div>
                     </div>
-                    <img id="me" src="./emojy/happy-cat.webp" alt="" id="me">
+                    <img id="me" src="./emojy/happy-cat.webp" alt="" style="width: 30%;max-width: 12.5rem;">
                 </div>
                 <div class="top-border">
                     <span class="line"></span>
@@ -61,7 +61,7 @@
                     <span class="line"></span>
                 </div>
                 <div class="part2">
-                    <div class="speak-line">
+                    <!-- <div class="speak-line">
                         <p class="line" style="font-style: italic;margin: 10px 0;">亲爱的栎儿：</p>
                         <p class="line" style="text-indent:2em;line-height: 20px;margin:0px 0px 20px 0 0;">
                             很开心能够成为你的另一半。非常幸运在这个学校遇到了优秀的你，
@@ -71,7 +71,7 @@
                             在我看来我们的爱情就像一列开往远方的火车，重要的不是火车开往的目的地，而是旅途中美好的风景，最后可能并不尽人意，但是也不枉爱过、快乐过。
                             非常期待和小傻瓜的甜蜜爱情，不过未来有多难，我都希望能和你一直走下去，直到永远。
                         </p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="cat-pic-2">
                     <img src="./emojy/kiss-cat.webp" alt="">
@@ -81,5 +81,25 @@
         </div>
     </div>
 </body>
+<script src="https://cdn.bootcdn.net/ajax/libs/three.js/0.151.3/three.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/vanta/0.5.24/vanta.birds.min.js"></script>
+<script>
+VANTA.BIRDS({
+  el: "#container",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  birdSize: 1.80,
+  speedLimit: 7.00,
+  separation: 62.00,
+  alignment: 64.00,
+  cohesion: 59.00,
+  quantity: 4.00
+})
+</script>
 
 </html>

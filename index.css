@@ -73,12 +73,15 @@ canvas {
 }
 
 .red-flower {
-  width: 300px;
+  height: 100%;
   position: absolute;
-  top: 0;
-  transform: rotateX(90deg);
+  top: 25%;
+  transform: rotate(-30deg);
+  z-index: 9;
+  left: 30%;
 }
 .red-flower img {
+  max-height: 100%;
   max-width: 100%;
 }
 
@@ -110,7 +113,7 @@ canvas {
   display: flex;
   justify-content: space-around;
   z-index: 0;
-  bottom: -20%;
+  bottom: -15%;
   left: 0;
 }
 .cat-pic-2 img {
@@ -144,9 +147,9 @@ canvas {
 }
 .card-container .card .part1 {
   border-radius: 5px;
-  border-top: 5px solid rgba(5, 111, 90, 0.912);
-  border-left: 5px solid rgba(5, 111, 90, 0.912);
-  border-right: 5px solid rgba(5, 111, 90, 0.912);
+  border-top: 3px solid rgba(5, 111, 90, 0.912);
+  border-left: 3px solid rgba(5, 111, 90, 0.912);
+  border-right: 3px solid rgba(5, 111, 90, 0.912);
   width: 100%;
   height: calc(55% - 5px);
   background-color: aliceblue;
@@ -161,7 +164,7 @@ canvas {
 }
 .card-container .card .part1 .package-line {
   position: absolute;
-  top: 10%;
+  top: 35%;
   width: 100%;
 }
 .card-container .card .part1 .package-line img {
@@ -169,7 +172,7 @@ canvas {
 }
 .card-container .card .part1 img {
   width: 35%;
-  transform: translateZ(1px);
+  transform: translateZ(2px);
 }
 .card-container .card .part1 .start {
   z-index: -999;
@@ -186,18 +189,22 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1px;
+  transform-style: preserve-3d;
 }
 .card-container .card .part1 .start .open-logo-container img {
-  width: 80px;
-  height: 80px;
-  max-width: 80px;
-  max-height: 80px;
+  width: 50%;
+  transform: translateZ(-2px);
+}
+.card-container .card .part1 #me {
+  max-width: 200px !important;
+  width: 100px;
 }
 .card-container .card .part2 {
-  border-radius: 5px;
-  border-bottom: 5px solid rgba(5, 111, 90, 0.912);
-  border-left: 5px solid rgba(5, 111, 90, 0.912);
-  border-right: 5px solid rgba(5, 111, 90, 0.912);
+  border-radius: 3px;
+  border-bottom: 3px solid rgba(5, 111, 90, 0.912);
+  border-left: 3px solid rgba(5, 111, 90, 0.912);
+  border-right: 3px solid rgba(5, 111, 90, 0.912);
   width: calc(100% - 10px);
   height: 45%;
   position: relative;
@@ -218,6 +225,8 @@ canvas {
   word-wrap: break-word;
   word-break: break-all;
   letter-spacing: 1px;
+  display: flex;
+  align-items: center;
 }
 .card-container .card .part2 .speak-line p {
   font-weight: 600;
