@@ -255,7 +255,9 @@ canvas {
                 word-break: break-all;
                 letter-spacing: 1px;
                 display: flex;
-                align-items: center;
+                // align-items: center;
+                flex-direction: column;
+                justify-content: center;
 
                 p {
                     font-weight: 600;

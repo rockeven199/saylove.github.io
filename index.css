@@ -226,7 +226,8 @@ canvas {
   word-break: break-all;
   letter-spacing: 1px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .card-container .card .part2 .speak-line p {
   font-weight: 600;
