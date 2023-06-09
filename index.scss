@@ -16,27 +16,38 @@ canvas {
     background-image: linear-gradient(135deg, rgba(246, 168, 227, 0.5) 10%, rgba(235, 64, 70, 0.5) 100%);
 }
 
+body::-webkit-scrollbar {
+    width: 0px;
+}
 
-@media screen and (min-width:350px) and (min-height:600px) {
+
+@media screen and (min-width:800px) and (min-height:1700px) {
 
     .card {
-        width: 80% !important;
-        height: 80% !important;
-        perspective: 200px;
+        width: 100% !important;
+        height: 70% !important;
+        perspective: 10000px !important;
+        min-width: 80%;
+        width: 80%;
+    }
 
-        .part1 {
-            height: calc(20% - 5px);
-        }
+    .part1 {
+        height: calc(20% - 5px);
+        perspective: 5px;
+    }
 
-        .part2 {
-            height: 80%;
-        }
+    .part2 {
+        perspective: 5px;
+        height: 80%;
     }
 
     .speak-line {
+        overflow: hidden;
 
         .line {
-            font-size: 100px;
+            font-size: 25px !important;
+            line-height: 40px !important;
+            letter-spacing: 2px;
         }
     }
 
@@ -89,14 +100,17 @@ canvas {
 .red-flower {
     height: 100%;
     position: absolute;
-    top:25%;
-    transform: rotate(-30deg);
-    z-index: 9;
-    left: 30%;
+    top: -25%;
+    // transform: rotate(-30deg);
+    z-index: 999;
+    left: 50%;
+    perspective: 1px;
+    // transform-style: preserve-3d;
 
     img {
         max-height: 100%;
         max-width: 100%;
+        // transform: translateZ(10px);
     }
 }
 
@@ -157,16 +171,17 @@ canvas {
         width: 70%;
         min-height: 300px;
         max-width: 500px;
-        height: 50%;
+        height: 80%;
         transition: all 0.65s ease-in;
         perspective: 800px;
         transform-style: preserve-3d;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         .part1 {
             border-radius: 5px;
-            border-top: 3px solid rgba(5, 111, 90, 0.912);
-            border-left: 3px solid rgba(5, 111, 90, 0.912);
-            border-right: 3px solid rgba(5, 111, 90, 0.912);
+            box-shadow: 0px 0px 5px black;
             width: 100%;
             height: calc(55% - 5px);
             background-color: aliceblue;
@@ -178,16 +193,29 @@ canvas {
             align-items: center;
             transform-style: preserve-3d;
             perspective: 10px;
-            position: relative;
+            background-color: antiquewhite;
 
             .package-line {
-                position: absolute;
-                top: 35%;
+                display: flex;
                 width: 100%;
+                position: absolute;
+                z-index: 999;
+                top: 45%;
 
                 img {
                     width: 100%;
+                    max-width: 100%;
                 }
+
+                // perspective: 5px;
+                // transform-style: preserve-3d;
+                // z-index: 999;
+
+                // img {
+                //     max-width: 100%;
+                //     width: 100%;
+                //     transform: translateZ(5px);
+                // }
             }
 
             img {
@@ -196,49 +224,43 @@ canvas {
             }
 
             .start {
-                z-index: -999;
+                z-index: 99;
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: antiquewhite;
+                background-color: #ffd7f2;
+                perspective: 1px;
+                transform-style: preserve-3d;
+                border-radius: 5px;
 
                 .open-logo-container {
                     width: 100%;
-                    height: 100%;
+                    height: 20%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    perspective: 1px;
-                    transform-style: preserve-3d;
+                    transform: translateZ(-2px);
 
                     img {
-                        width: 50%;
+                        width: 70%;
                         // max-width: 120px;
                         // max-height: 80px;
-                        transform: translateZ(-2px);
                     }
                 }
-            }
-
-            #me {
-                max-width: 200px !important;
-                width: 100px;
             }
         }
 
         .part2 {
-            border-radius: 3px;
-            border-bottom: 3px solid rgba(5, 111, 90, 0.912);
-            border-left: 3px solid rgba(5, 111, 90, 0.912);
-            border-right: 3px solid rgba(5, 111, 90, 0.912);
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px black;
             width: calc(100% - 10px);
             height: 45%;
             position: relative;
-            background-color: rgb(245, 230, 200);
+            background-color: rgb(231, 249, 152);
             padding: 5px;
-            overflow: auto;
+            overflow-y: auto;
 
             &::after {
                 width: 100%;
@@ -253,6 +275,7 @@ canvas {
             .speak-line {
                 word-wrap: break-word;
                 word-break: break-all;
+                padding: 10px;
                 letter-spacing: 1px;
                 display: flex;
                 // align-items: center;
@@ -261,7 +284,7 @@ canvas {
 
                 p {
                     font-weight: 600;
-                    font-size: 12px;
+                    font-size: 14px;
                     text-decoration: underline 1px solid;
                 }
             }
@@ -270,10 +293,8 @@ canvas {
         .top-border {
             border-left: 5px solid rgba(203, 145, 19, 0.912);
             border-right: 5px solid rgba(203, 145, 19, 0.912);
-            width: 100%;
+            width: calc(100% - 20px);
             height: 5px;
-            top: 0;
-            left: 0;
             background-color: rgb(37, 183, 188);
             overflow: hidden;
             display: flex;

@@ -17,7 +17,8 @@ function doingCard() {
                 cardContainer.style.top = "10%";
                 cardPart1.style.animation = "openCard 1s ease-in-out forwards";
                 clearTimeout(temp)
-            }, 1000);
+                start.style.opacity = "0"
+            }, 100);
             getPackageLine.style.animation = "slideOut 1s forwards"
             cardPart1.dataset.canopenflag = "false";
         } else {
@@ -26,6 +27,10 @@ function doingCard() {
             start.style.zIndex = "999";
             cardPart1.style.animation = "closeCard 1s ease-in-out forwards";
             cardPart1.dataset.canopenflag = "true";
+            var temp = setTimeout(() => {
+                start.style.opacity = "1";
+                clearTimeout(temp)
+            }, 800)
         }
     });
 
@@ -38,16 +43,20 @@ function doingCard() {
                 cardContainer.style.transform = "rotate(0deg)";
                 cardContainer.style.top = "10%";
                 cardPart1.style.animation = "openCard 1s ease-in-out forwards";
-                clearTimeout(temp)
-            }, 1000);
+                clearTimeout(temp);
+                start.style.opacity = "0"
+            }, 100);
             getPackageLine.style.animation = "slideOut 1s forwards"
             cardPart1.dataset.canopenflag = "false";
         } else {
             cardContainer.style.transform = "rotate(180deg)";
             cardContainer.style.top = "25%";
-            start.style.zIndex = "999";
             cardPart1.style.animation = "closeCard 1s ease-in-out forwards";
             cardPart1.dataset.canopenflag = "true";
+            var temp = setTimeout(() => {
+                start.style.opacity = "1";
+                clearTimeout(temp)
+            }, 800)
         }
     });
 
@@ -61,18 +70,19 @@ function doingCard() {
                 cardContainer.style.top = "10%";
                 cardPart1.style.animation = "openCard 1s ease-in-out forwards";
                 clearTimeout(temp)
-            }, 500);
+            }, 250);
             getPackageLine.style.animation = "slideOut 1s forwards"
             cardPart1.dataset.canopenflag = "false";
             cardContainer.removeAttribute('style')
             cardContainer.style.transform = "rotate(0deg)";
             cardContainer.style.top = "10%";
             cardPart1.style.animation = "openCard 1s ease-in-out forwards";
-            // topEmojy.style.opacity = "1";
-            setTimeout(() => {
+            var temp = setTimeout(() => {
                 start.style.zIndex = "99";
+                start.style.opacity = "1";
                 document.querySelector(".open-logo-container").style.opacity = "0"
-            }, 1000);
+                clearTimeout(temp)
+            }, 800);
             cardPart1.dataset.canopenflag = "false";
         }
     });
@@ -80,4 +90,6 @@ function doingCard() {
 
 window.onload = () => {
     doingCard();
+    // document.querySelector(".package-line img").style.width = ;
+    console.log(document.querySelector(".package-line"))
 }

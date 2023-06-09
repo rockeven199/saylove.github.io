@@ -16,20 +16,33 @@ canvas {
   background-image: linear-gradient(135deg, rgba(246, 168, 227, 0.5) 10%, rgba(235, 64, 70, 0.5) 100%);
 }
 
-@media screen and (min-width: 350px) and (min-height: 600px) {
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+@media screen and (min-width: 800px) and (min-height: 1700px) {
   .card {
-    width: 80% !important;
-    height: 80% !important;
-    perspective: 200px;
+    width: 100% !important;
+    height: 70% !important;
+    perspective: 10000px !important;
+    min-width: 80%;
+    width: 80%;
   }
-  .card .part1 {
+  .part1 {
     height: calc(20% - 5px);
+    perspective: 5px;
   }
-  .card .part2 {
+  .part2 {
+    perspective: 5px;
     height: 80%;
   }
+  .speak-line {
+    overflow: hidden;
+  }
   .speak-line .line {
-    font-size: 100px;
+    font-size: 25px !important;
+    line-height: 40px !important;
+    letter-spacing: 2px;
   }
   .light-line {
     top: 25%;
@@ -75,10 +88,10 @@ canvas {
 .red-flower {
   height: 100%;
   position: absolute;
-  top: 25%;
-  transform: rotate(-30deg);
-  z-index: 9;
-  left: 30%;
+  top: -25%;
+  z-index: 999;
+  left: 50%;
+  perspective: 1px;
 }
 .red-flower img {
   max-height: 100%;
@@ -140,16 +153,17 @@ canvas {
   width: 70%;
   min-height: 300px;
   max-width: 500px;
-  height: 50%;
+  height: 80%;
   transition: all 0.65s ease-in;
   perspective: 800px;
   transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .card-container .card .part1 {
   border-radius: 5px;
-  border-top: 3px solid rgba(5, 111, 90, 0.912);
-  border-left: 3px solid rgba(5, 111, 90, 0.912);
-  border-right: 3px solid rgba(5, 111, 90, 0.912);
+  box-shadow: 0px 0px 5px black;
   width: 100%;
   height: calc(55% - 5px);
   background-color: aliceblue;
@@ -160,57 +174,55 @@ canvas {
   align-items: center;
   transform-style: preserve-3d;
   perspective: 10px;
-  position: relative;
+  background-color: antiquewhite;
 }
 .card-container .card .part1 .package-line {
-  position: absolute;
-  top: 35%;
+  display: flex;
   width: 100%;
+  position: absolute;
+  z-index: 999;
+  top: 45%;
 }
 .card-container .card .part1 .package-line img {
   width: 100%;
+  max-width: 100%;
 }
 .card-container .card .part1 img {
   width: 35%;
   transform: translateZ(2px);
 }
 .card-container .card .part1 .start {
-  z-index: -999;
+  z-index: 99;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: antiquewhite;
+  background-color: #ffd7f2;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  border-radius: 5px;
 }
 .card-container .card .part1 .start .open-logo-container {
   width: 100%;
-  height: 100%;
+  height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 1px;
-  transform-style: preserve-3d;
-}
-.card-container .card .part1 .start .open-logo-container img {
-  width: 50%;
   transform: translateZ(-2px);
 }
-.card-container .card .part1 #me {
-  max-width: 200px !important;
-  width: 100px;
+.card-container .card .part1 .start .open-logo-container img {
+  width: 70%;
 }
 .card-container .card .part2 {
-  border-radius: 3px;
-  border-bottom: 3px solid rgba(5, 111, 90, 0.912);
-  border-left: 3px solid rgba(5, 111, 90, 0.912);
-  border-right: 3px solid rgba(5, 111, 90, 0.912);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
   width: calc(100% - 10px);
   height: 45%;
   position: relative;
-  background-color: rgb(245, 230, 200);
+  background-color: rgb(231, 249, 152);
   padding: 5px;
-  overflow: auto;
+  overflow-y: auto;
 }
 .card-container .card .part2::after {
   width: 100%;
@@ -224,6 +236,7 @@ canvas {
 .card-container .card .part2 .speak-line {
   word-wrap: break-word;
   word-break: break-all;
+  padding: 10px;
   letter-spacing: 1px;
   display: flex;
   flex-direction: column;
@@ -231,17 +244,15 @@ canvas {
 }
 .card-container .card .part2 .speak-line p {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   -webkit-text-decoration: underline 1px solid;
           text-decoration: underline 1px solid;
 }
 .card-container .card .top-border {
   border-left: 5px solid rgba(203, 145, 19, 0.912);
   border-right: 5px solid rgba(203, 145, 19, 0.912);
-  width: 100%;
+  width: calc(100% - 20px);
   height: 5px;
-  top: 0;
-  left: 0;
   background-color: rgb(37, 183, 188);
   overflow: hidden;
   display: flex;
